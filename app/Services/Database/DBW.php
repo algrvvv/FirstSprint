@@ -124,7 +124,7 @@ class DBW
      * @param string $bd_name
      * @param array $values -> принимает ассоциативный массив
      */
-    public function insert(string $bd_name, array $values)
+    public function insert(array $values, string $bd_name)
     {
         $columns = [];
         $column_values = [];
