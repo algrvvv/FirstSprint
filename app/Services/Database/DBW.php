@@ -8,9 +8,9 @@ class DBW
 {
     private string $DB_HOST = 'localhost';
     private string $DB_PORT = '3306';
-    private string $DB_NAME = "solesprint";
-    private string $DB_USERNAME = "root";
-    private string $DB_PASSWORD = "";
+    private string $DB_NAME = "db_name";
+    private string $DB_USERNAME = "db_username";
+    private string $DB_PASSWORD = "db_password";
     private $connection;
     private $query;
 
@@ -53,7 +53,6 @@ class DBW
                     }
                 }
             } else {
-                //сделать потом через сессии
                 return "Произошла ошибка при получении данных";
             }
 
@@ -82,9 +81,6 @@ class DBW
      */
     public function where(string $field, string | array $value, string $operator = "=", string $separator = 'AND')
     {
-        /**
-         * С следующих обновлениях данная функция получит обновление функционала
-         */
         if ($field != '' && $value != '') {
             if (str_contains($field, '.')) {
                 $field = "`" . explode('.', $field)[0] . "`.`" . explode('.', $field)[1] . "` ";
@@ -116,7 +112,8 @@ class DBW
             $this->setQuery($sql);
             return $this;
         } else {
-            echo "Недопустимые данные";
+            $this->setQuery("Ошибка при получении данных в конструкции 'where'");
+            return $this;
         }
     }
 
@@ -176,7 +173,8 @@ class DBW
                 die("Error: " . $e);
             }
         } else {
-            echo "Данные пустые";
+            $this->setQuery("Ошибка при получении данных в конструкции 'delete'");
+            return $this;
         }
     }
 
@@ -216,7 +214,7 @@ class DBW
                 die("Error: " . $e);
             }
         } else {
-            echo "недопустимые данные";
+            return "недопустимые данные";
         }
     }
 
@@ -237,7 +235,79 @@ class DBW
             $this->setQuery($query);
             return $this;
         } else {
-            echo "Недопустимые данные";
+            $this->setQuery("Ошибка при получении данных в конструкции 'join'");
+            return $this;
+        }
+    }
+
+    /**
+     * @param string $field
+     * @param string $sort
+     */
+    public function orderBy(string $field, string $sort = "ASC")
+    {
+        if ($field != "" && $sort != "") {
+            $query = $this->getQuery();
+            if (str_contains($query, 'ORDER BY')) {
+                $query .= ", `$field` " . strtoupper($sort);
+                $this->setQuery($query);
+                return $this;
+            } else {
+                $query .= " ORDER BY `$field`" .  strtoupper($sort);
+                $this->setQuery($query);
+                return $this;
+            }
+        } else {
+            $this->setQuery("Ошибка при получении данных в конструкции 'orderBy'");
+            return $this;
+        }
+    }
+
+    /**
+     * @param string $field
+     */
+    public function groupBy(string $field)
+    {
+        if ($field != "") {
+            $query = $this->getQuery();
+            if (str_contains($query, "GROUP BY")) {
+                $query .= ", `$field`";
+            } else {
+                $query .= "GROUP BY `$field`";
+            }
+            $this->setQuery($query);
+            return $this;
+        } else {
+            $this->setQuery("Ошибка при получении данных в конструкции 'groupBy'");
+            return $this;
+        }
+    }
+
+    /**
+     * @param string $field
+     * @param string $value
+     */
+    public function like(string $field, string $value)
+    {
+        if ($field != "" && $value != "") {
+            $query = $this->getQuery();
+
+            if (str_contains($field, '.')) {
+                $field = "`" . explode('.', $field)[0] . "`.`" . explode('.', $field)[1] . "` ";
+            } else {
+                $field = "`$field`";
+            }
+
+            if (str_contains($query, "WHERE")) {
+                $query .= " AND $field LIKE '$value'";
+            } else {
+                $query .= " WHERE $field LIKE '$value'";
+            }
+            $this->setQuery($query);
+            return $this;
+        } else {
+            $this->setQuery("Ошибка при получении данных в конструкции 'like'");
+            return $this;
         }
     }
 }

@@ -101,6 +101,16 @@ $s->get_session('varible_name');
 
 ### Работа с базой данных
 
+>Чтобы подключить базу данных, необходимо ввести данные для подключения в `app\Services\Database\DBW.php`
+
+```php
+    private string $DB_HOST = 'localhost';
+    private string $DB_PORT = '3306';
+    private string $DB_NAME = "db_name";
+    private string $DB_USERNAME = "db_username";
+    private string $DB_PASSWORD = "db_password";
+```
+
 Для более удобной работы с БД был написан класс `DBW`, который имеет примерно следующий список функций:
 
 1. `select()` - как и в Sql, функция служит для получения строк из таблицы базы данных.
