@@ -16,7 +16,7 @@ git clone https://github.com/algrvvv/FirstSprint.git
 или через `composer`
 
 ```bash
-composer require ...
+composer require imissher/first-sprint
 ```
 ### Работа с роутами
 
