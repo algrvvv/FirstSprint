@@ -18,6 +18,13 @@ git clone https://github.com/algrvvv/FirstSprint.git
 ```bash
 composer require imissher/first-sprint
 ```
+
+> После установки обязательно сделать установку композера!
+
+```bash
+composer i
+```
+
 ### Работа с роутами
 
 Файл `routes/web.php` будет служить главным отправным пунктом, для каждого вашего роута.
