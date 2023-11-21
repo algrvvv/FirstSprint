@@ -1,6 +1,16 @@
 # FirstSprint
 
-### FirstSprint - это моя первая попытка создать фреймворк, подобие фреймворка на чистом PHP. Вдохновленный идеями `Laravel`, поэтому  где-то названия функций и классов могут пересекаться XD 
+### FirstSprint - это моя первая попытка создать фреймворк, подобие фреймворка на чистом PHP. Вдохновленный идеями `Laravel`, поэтому  где-то названия функций и классов могут пересекаться XD
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <a> 
+        <img src="https://img.shields.io/badge/pure%20php%20-8A2BE2" style="max-width: 100%;">
+    </a> 
+    <a href="https://packagist.org/packages/imissher/first-sprint" rel="nofollow">
+        <img src="https://img.shields.io/badge/packagist-v1.0-blue" style="max-width: 100%;">
+    </a>
+</div>
+<br>
 
 > Сразу хочу сказать, что так как это первый опыт, то не исключены какие либо баги, недоработки. Проект пишется для практики и более глубокого понимания концепции работы языка и WEB технологий в принципе. Спасибо за внимание!
 
