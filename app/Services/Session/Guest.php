@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Session;
+namespace Imissher\FirstSprint\Services\Session;
 
 class Guest
 {

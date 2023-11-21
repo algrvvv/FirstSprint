@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Services\Views;
-use App\Services\Session\Session;
+namespace Imissher\FirstSprint\Services\Views;
+
+use Imissher\FirstSprint\Services\Session\Session;
+
 
 class View
 {
@@ -26,7 +28,7 @@ class View
         $filename = 'views/' . $layout . '.php';
         $s = new Session();
         if (file_exists($filename)) {
-            if(count($values) > 0) {
+            if (count($values) > 0) {
                 foreach ($values as $key => $value) {
                     $s->create_session($key, $value);
                 }

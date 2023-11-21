@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Services\Auth;
+namespace Imissher\FirstSprint\Services\Auth;
 
+use Imissher\FirstSprint\Services\Database\DBW;
 
-use App\Services\Database\DBW;
-use App\Services\Helpers\Helpers;
 
 class Auth
 {
@@ -80,7 +79,7 @@ class Auth
         $db = new DBW();
         $old_session = $this->user();
         $uid = $old_session['id'];
-        $reset = $db->select(['*'], 'users')->where('id',$uid)->get();
+        $reset = $db->select(['*'], 'users')->where('id', $uid)->get();
         $this->setUser($reset);
         $this->login();
     }

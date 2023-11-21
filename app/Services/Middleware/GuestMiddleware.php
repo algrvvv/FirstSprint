@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\Middleware;
+namespace Imissher\FirstSprint\Services\Middleware;
 
-use App\Services\Https\Request;
-use App\Services\Https\Route;
-use App\Services\Session\UserSession;
+use Imissher\FirstSprint\Services\Https\Route;
+use Imissher\FirstSprint\Services\Https\Request;
+use Imissher\FirstSprint\Services\Session\UserSession;
 
 class GuestMiddleware
 {

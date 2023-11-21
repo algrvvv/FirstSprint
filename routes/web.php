@@ -1,6 +1,6 @@
 <?php
 
-use App\Services\Https\Route;
+use Imissher\FirstSprint\Services\Https\Route;
 
 Route::get('/', 'welcome');
 

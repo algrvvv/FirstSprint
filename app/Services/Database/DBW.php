@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Database;
+namespace Imissher\FirstSprint\Services\Database;
 
-use App\Services\Helpers\Helpers;
+use Imissher\FirstSprint\Services\Helpers\Helpers;
 
 class DBW
 {

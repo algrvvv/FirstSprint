@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Services\Session;
+namespace Imissher\FirstSprint\Services\Session;
 
 class Session
 {
-    public function __construct(){
+    public function __construct()
+    {
         session_start();
     }
     /**
@@ -18,7 +19,7 @@ class Session
 
     public function get_session(string $name)
     {
-        if(isset($_SESSION[$name])){
+        if (isset($_SESSION[$name])) {
             return $_SESSION[$name];
         } else {
             return null;

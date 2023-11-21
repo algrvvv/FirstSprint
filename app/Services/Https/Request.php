@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Services\Https;
+namespace Imissher\FirstSprint\Services\Https;
 
 class Request
 {
     public static function query($key): string
     {
-        if(isset($_REQUEST[$key])){
+        if (isset($_REQUEST[$key])) {
             return $_REQUEST[$key];
         } else {
             return "none";

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Services\Https;
 
-use App\Services\Middleware\Kernel;
-use App\Services\Views\View;
-use RegisterInterface;
+namespace Imissher\FirstSprint\Services\Https;
+
+use Imissher\FirstSprint\Services\Views\View;
+use Imissher\FirstSprint\Services\Https\DynamicUrl;
+use Imissher\FirstSprint\Services\Middleware\Kernel;
 
 class Route
 {

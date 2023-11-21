@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services\Validators;
+namespace Imissher\FirstSprint\Services\Validators;
 
-use App\Services\Database\DBW;
+use Imissher\FirstSprint\Services\Database\DBW;
 
 class Validator
 {

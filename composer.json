@@ -6,17 +6,16 @@
         "php": "^8.0"
     },
     "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "Imissher\\FirstSprint\\": "app/"
+        }
+    },
     "authors": [
         {
             "name": "algrvvv",
             "email": "alexandrgr25@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    
-    "autoload": {
-        "psr-4": {
-            "App\\": "app/"
-        }
-    }
+    "minimum-stability": "dev"
 }

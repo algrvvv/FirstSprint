@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Middleware;
+namespace Imissher\FirstSprint\Services\Middleware;
 
 class Kernel
 {
@@ -17,7 +17,7 @@ class Kernel
 
     public function getMiddlewares(string $url, string $middleware)
     {
-        if($middl = $this->middlewares[$middleware] ?? null){
+        if ($middl = $this->middlewares[$middleware] ?? null) {
             $class = new $middl[0]();
             $method = $middl[1];
             $class->$method($url);

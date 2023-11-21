@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Https;
+namespace Imissher\FirstSprint\Services\Https;
 
 class DynamicUrl
 {
@@ -59,8 +59,8 @@ class DynamicUrl
                 } else {
                     if ($page_url == '')
                         $page_url .= $value;
-                    else 
-                        $page_url .= '/'. $value;
+                    else
+                        $page_url .= '/' . $value;
                 }
             }
             // echo $page_url . "<br>";
