@@ -1,7 +1,7 @@
 {
     "name": "imissher/first-sprint",
     "description": "The first attempt to create a framework in pure php",
-    "type": "project",
+    "type": "framework",
     "require": {
         "php": "^8.0"
     },
